@@ -8,7 +8,7 @@ const NavbarComponent = () => {
       <img
         src={logo}
         alt="Ero-Sennin"
-        className="absolute top-16 left-20 w-[120px] h-auto object-contain rounded-lg"
+        className="absolute top-14 left-20 w-[120px] h-auto object-contain rounded-lg cursor-pointer"
       />
       <ActionsComponent />
     </div>

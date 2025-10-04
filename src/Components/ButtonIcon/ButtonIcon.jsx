@@ -4,7 +4,7 @@ const ButtonIcon = ({ icon: Icon, label, onClick, isAfterLine, className }) => {
   return (
     <button
       onClick={onClick}
-      className={`group relative aspect-square w-full flex flex-col items-center justify-center gap-1 ${className} hover:bg-[#353535] duration-500 hover:translate-x-2 ${
+      className={`cursor-pointer group relative aspect-square w-full flex flex-col items-center justify-center gap-1 ${className} hover:bg-[#353535] duration-500 hover:translate-x-2 ${
         isAfterLine
           ? " after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gradient-to-r after:from-transparent after:to-[#f6b846]"
           : ""
