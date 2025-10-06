@@ -1,12 +1,8 @@
-import React from 'react';
-import AboutPage from '~/Pages/AboutPage';
+import React from "react";
+import AboutPage from "~/Pages/AboutPage";
 
 const HomePage = () => {
-    return (
-        <div>
-            <AboutPage />
-        </div>
-    );
+  return <AboutPage />;
 };
 
 export default HomePage;
