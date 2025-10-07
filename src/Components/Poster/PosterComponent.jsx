@@ -7,6 +7,7 @@ import {
   Phone,
   Download,
 } from "lucide-react";
+// import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import coverImg from "~/assets/cover.png";
 import avatar from "~/assets/avatar.jpeg";
@@ -39,6 +40,22 @@ const PosterComponent = () => {
           <p className="mt-[10px] text-center text-[#f6b846] text-[17px]/[25px]">
             Web Developer
           </p>
+          {/* 
+          <div className="flex items-center justify-center md:py-6 sm:py-4 py-2 text-2xl font-bold ">
+            <p>Fast, flexible financing for</p>
+            <span className="text-[#00df9a] font-bold pl-1">
+              <Typewriter
+                words={["Mình là Phúc Võ nhé!", "I'm Phúc Võ", "boku wa EroSennin desuyo"]}
+                loop
+                cursor
+                cursorStyle="|"
+                typeSpeed={120}
+                deleteSpeed={100}
+                delaySpeed={1000}
+              />
+            </span>
+          </div> */}
+
           <div className="flex justify-between mt-10 mx-auto w-md h-[25px]">
             {socials.map((social, index) => {
               const Icon = social.icon;

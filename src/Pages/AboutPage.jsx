@@ -22,7 +22,7 @@ const AboutPage = () => {
           <h3 className="text-[17px] font-semibold mb-4">
             Xin chào! Mình là Phúc Võ — bí danh: EroSennin 🌀
           </h3>
-          <p className="flex flex-col gap-3 text-[15px] text-gray-400 leading-relaxed font-mono text-justify">
+          <div className="flex flex-col gap-3 text-[15px] text-gray-400 leading-relaxed font-mono text-justify">
             <p>
               Hiện tại, mình là một FullStack Web Developer, thuộc thế hệ coder
               trẻ nhưng trái tim lại mang tinh thần lãng tử như thầy Jiraiya —
@@ -47,7 +47,7 @@ const AboutPage = () => {
               Rất vui được gặp bạn — hãy cùng nhau tạo nên những chương truyện
               thật ý nghĩa nhé!
             </p>
-          </p>
+          </div>
 
           <div className="mt-8 grid grid-cols-2 gap-4 text-[15px] font-mono">
             {info.map((item) => (
@@ -62,8 +62,11 @@ const AboutPage = () => {
           </div>
 
           <div className="mt-8 grid grid-cols-4 gap-4">
-            {skills.map((skill) => (
-              <div className="group relative aspect-square overflow-hidden rounded-lg bg-gray-800">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="group relative aspect-square overflow-hidden rounded-lg bg-gray-800"
+              >
                 <img
                   src={skill.img}
                   alt={skill.name}

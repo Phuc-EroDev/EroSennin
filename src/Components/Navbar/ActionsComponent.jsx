@@ -7,11 +7,13 @@ import {
   SquareTerminal,
   User,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ButtonIcon from "~/Components/ButtonIcon/ButtonIcon";
 
 const ActionsComponent = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const actions = [
     { icon: User, label: "ABOUT", path: "/about" },
     { icon: FileUser, label: "RESUME", path: "/resume" },
@@ -27,6 +29,7 @@ const ActionsComponent = () => {
           key={index}
           icon={action.icon}
           label={action.label}
+          active={action.path === location.pathname}
           isAfterLine={index !== actions.length - 1}
           onClick={() => navigate(action.path)}
           className={`bg-[#222222] ${index === 0 ? "rounded-t-lg" : ""} ${

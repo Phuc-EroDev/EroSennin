@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarComponent from "~/Components/Navbar/NavbarComponent";
 import PosterComponent from "~/Components/Poster/PosterComponent";
+import "~/Components/Layout/Layout.scss";
 
 const DefaultLayout = ({ children, isShowNavbar, isShowPoster }) => {
   return (
@@ -11,7 +12,7 @@ const DefaultLayout = ({ children, isShowNavbar, isShowPoster }) => {
 
       {/* div content */}
       <div className="flex-1 min-w-0 flex flex-col py-14 pb-5">
-        <div className="h-full bg-[#222222] rounded-lg overflow-y-auto">
+        <div className="h-full bg-[#222222] rounded-lg overflow-y-auto custom-scrollbar">
           {children}
         </div>
       </div>
