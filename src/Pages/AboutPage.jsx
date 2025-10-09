@@ -18,7 +18,7 @@ const AboutPage = () => {
   return (
     <div>
       <ContentComponent label="About Me">
-        <div className=" px-10">
+        <div className="px-10">
           <h3 className="text-[17px] font-semibold mb-4">
             Xin chào! Mình là Phúc Võ — bí danh: EroSennin 🌀
           </h3>

@@ -96,9 +96,9 @@ const ProjectPage = () => {
   };
 
   return (
-    <div className="p-6">
+    <div>
       <ContentComponent label="Personal Projects">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="px-10 grid grid-cols-2 gap-6">
           {featuredProjects.map((project, index) => {
             const isLeftColumn = index % 2 === 0;
             const isRightColumn = index % 2 === 1;
