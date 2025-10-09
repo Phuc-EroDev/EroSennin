@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ActionsComponent from "~/Components/Navbar/ActionsComponent";
-import logo from "~/assets/Logo.jpg";
+import logo from "~/assets/logo.jpg";
 
 const NavbarComponent = () => {
   const navigate = useNavigate();
