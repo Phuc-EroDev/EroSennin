@@ -2,7 +2,7 @@ import { useState } from "react";
 import { X, Download, Fullscreen } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
 import ContentComponent from "~/Components/ContentComponent/ContentComponent";
-import cvPDF from "~/assets/cv/VoTriPhuc_CV.pdf";
+import cvPDF from "~/assets/CV/VoTriPhuc_CV.pdf";
 
 // Setup pdfjs
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
