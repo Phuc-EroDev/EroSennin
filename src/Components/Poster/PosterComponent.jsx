@@ -10,7 +10,7 @@ import {
 // import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import coverImg from "~/assets/cover.png";
-import avatar from "~/assets/avatar.jpeg";
+import avatar from "~/assets/avatar.jpg";
 
 const PosterComponent = () => {
   const socials = [
