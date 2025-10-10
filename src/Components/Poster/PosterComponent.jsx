@@ -7,18 +7,21 @@ import {
   Phone,
   Download,
 } from "lucide-react";
-// import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
-import coverImg from "~/assets/cover.png";
-import avatar from "~/assets/avatar.jpg";
+import coverImg from "~/assets/images/cover.png";
+import avatar from "~/assets/images/avatar.jpg";
+import cvPDF from "~/assets/CV/VoTriPhuc_CV.pdf";
 
 const PosterComponent = () => {
   const socials = [
-    { icon: Facebook, link: "https://www.facebook.com/" },
-    { icon: Linkedin, link: "https://www.linkedin.com/" },
-    { icon: Github, link: "https://www.github.com/" },
-    { icon: Send, link: "https://www.send.com/" },
-    { icon: Phone, link: "https://www.phone.com/" },
+    { icon: Facebook, link: "https://www.facebook.com/phuc.vo.692470" },
+    {
+      icon: Linkedin,
+      link: "https://www.linkedin.com/in/ph%C3%BAc-v%C3%B5-tr%C3%AD-771966387/",
+    },
+    { icon: Github, link: "https://github.com/Phuc-EroDev" },
+    { icon: Send, link: "https://web.telegram.org/k/" },
+    { icon: Phone, link: "https://www.zalo.com/" },
   ];
 
   return (
@@ -61,8 +64,9 @@ const PosterComponent = () => {
               const Icon = social.icon;
               return (
                 <Link
-                  to={social.link}
                   key={index}
+                  to={social.link}
+                  target="_blank"
                   className="flex items-center justify-center w-10 h-10 rounded-sm group hover:bg-[#353535] hover:border-1 border-[#f6b846] duration-200"
                 >
                   <Icon className="text-[20px] w-7 h-7 text-white group-hover:text-[#f6b846] duration-500 cursor-pointer" />
@@ -72,24 +76,27 @@ const PosterComponent = () => {
           </div>
         </div>
         <div className="flex bg-[#353535] h-[100px] border-t-1 border-[#f6b846] rounded-b-lg">
-          <button
-            onClick={() => {}}
+          <a
+            onClick={(e) => e.stopPropagation()}
+            href={cvPDF}
+            download="CV_VoTriPhuc_FullStack.pdf"
             className="relative cursor-pointer group w-full flex items-center justify-center gap-5 bg-[#222222] rounded-bl-lg hover:bg-[#353535] duration-500 after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:w-[1px] after:bg-gradient-to-t after:from-transparent after:to-[#f6b846]"
           >
             <span className="text-[17px] font-bold group-hover:text-[#f6b846] duration-500">
               DOWNLOAD CV
             </span>
             <Download className="h-13 text-white group-hover:text-[#f6b846] duration-500" />
-          </button>
-          <button
+          </a>
+          <a
             onClick={() => {}}
+            href="mailto:Phucvo140902@gmail.com"
             className="relative cursor-pointer group w-full flex items-center justify-center gap-5 bg-[#222222] rounded-br-lg hover:bg-[#353535] duration-500 after:content-[''] after:absolute after:top-0 after:bottom-0 after:left-0 after:w-[1px] after:bg-gradient-to-t after:from-transparent after:to-[#f6b846]"
           >
             <span className="text-[17px] font-bold group-hover:text-[#f6b846] duration-500">
               CONTACT ME
             </span>
             <Send className="h-13 text-white group-hover:text-[#f6b846] duration-500" />
-          </button>
+          </a>
         </div>
       </div>
     </div>

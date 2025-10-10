@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ActionsComponent from "~/Components/Navbar/ActionsComponent";
-import logo from "~/assets/logo.jpg";
+import logo from "~/assets/images/logo.jpg";
 
 const NavbarComponent = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const NavbarComponent = () => {
         onClick={() => navigate("/")}
         src={logo}
         alt="Ero-Sennin"
-        className="absolute top-14 left-20 w-[120px] h-auto object-contain rounded-lg cursor-pointer"
+        className="absolute top-14 left-20 w-[120px] h-auto object-contain rounded-lg hover:border-[1px] border-[#FFB800] cursor-pointer"
       />
       <ActionsComponent />
     </div>

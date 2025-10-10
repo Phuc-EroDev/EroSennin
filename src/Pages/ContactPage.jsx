@@ -75,27 +75,27 @@ const ContactPage = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      link: "https://linkedin.com/in/yourprofile",
+      link: "https://www.linkedin.com/in/ph%C3%BAc-v%C3%B5-tr%C3%AD-771966387/",
     },
     {
       icon: Facebook,
       label: "Facebook",
-      link: "https://facebook.com/yourprofile",
+      link: "https://www.facebook.com/phuc.vo.692470",
     },
     {
       icon: MessagesSquare,
       label: "Discord",
-      link: "https://discord.com/yourprofile",
+      link: "https://discord.com/users/",
     },
     {
       icon: Send,
       label: "Telegram",
-      link: "https://telegram.com/yourprofile",
+      link: "https://telegram.com/",
     },
     {
       icon: Phone,
       label: "Zalo",
-      link: "https://zalo.com/yourprofile",
+      link: "https://zalo.com/",
     },
   ];
 

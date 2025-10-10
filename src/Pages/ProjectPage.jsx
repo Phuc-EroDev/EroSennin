@@ -1,7 +1,11 @@
 import ContentComponent from "~/Components/ContentComponent/ContentComponent";
 import ProjectComponent from "../Components/ProjectComponent/ProjectComponent";
 import React, { useState } from "react";
+import eroPortfolio from "~/assets/images/project/ero_portfolio.png";
 import eroShop from "~/assets/images/project/ero_shop.png";
+import eroHomestay from "~/assets/images/project/ero_homestay.png";
+import eroCommic from "~/assets/images/project/ero_commic.png";
+import eroMusic from "~/assets/images/project/ero_music.png";
 import ProjectDetailComponent from "../Components/ProjectDetailComponent/ProjectDetailComponent";
 
 const ProjectPage = () => {
@@ -9,7 +13,7 @@ const ProjectPage = () => {
 
   const featuredProjects = [
     {
-      thumb: eroShop,
+      thumb: eroPortfolio,
       name: "EroSennin",
       description: "Website portfolio",
       features: ["Animation mượt mà.", "Thiết kế sáng tạo."],
@@ -45,7 +49,7 @@ const ProjectPage = () => {
       demo: "https://erosennin.id.vn/",
     },
     {
-      thumb: eroShop,
+      thumb: eroHomestay,
       name: "Ero HomeStay",
       description: "Website HomeStay",
       features: [
@@ -58,7 +62,7 @@ const ProjectPage = () => {
       demo: "https://homestay.erosennin.id.vn/",
     },
     {
-      thumb: eroShop,
+      thumb: eroCommic,
       name: "Ero Commic",
       description: "Website xem anime",
       features: [
@@ -72,7 +76,7 @@ const ProjectPage = () => {
       demo: "https://anime-basic.erosennin.id.vn/",
     },
     {
-      thumb: eroShop,
+      thumb: eroMusic,
       name: "Ero Music",
       description: "Website Máy nghe nhạc",
       features: [

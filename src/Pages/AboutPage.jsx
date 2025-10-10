@@ -1,11 +1,15 @@
 import ContentComponent from "~/Components/ContentComponent/ContentComponent";
+import codding from "~/assets/images/coding.jpg";
+import repair from "~/assets/images/repair.png";
+import flute from "~/assets/images/flute.jpg";
+import batminton from "~/assets/images/batminton.jpg";
 
 const AboutPage = () => {
   const skills = [
-    { name: "Lập trình", img: "/path/to/coding.jpg" },
-    { name: "Sửa máy tính", img: "/path/to/repair.jpg" },
-    { name: "Thổi sáo", img: "/path/to/flute.jpg" },
-    { name: "Thể thao", img: "/path/to/gaming.jpg" },
+    { name: "Lập trình", img: codding },
+    { name: "Sửa máy tính", img: repair },
+    { name: "Thổi sáo", img: flute },
+    { name: "Thể thao", img: batminton },
   ];
 
   const info = [
