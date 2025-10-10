@@ -11,6 +11,7 @@ import {
   Send,
 } from "lucide-react";
 import ContentComponent from "~/Components/ContentComponent/ContentComponent";
+import { sendEmail } from "~/Services/SendMail";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,8 @@ const ContactPage = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,16 +30,30 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    alert("Cảm ơn bạn đã liên hệ! Mình sẽ phản hồi sớm nhất có thể.");
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const result = await sendEmail(formData);
+
+      if (result.success) {
+        alert("Cảm ơn bạn đã liên hệ! Mình sẽ phản hồi sớm nhất có thể.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        alert(result.message || "Có lỗi xảy ra. Vui lòng thử lại!");
+      }
+    } catch (error) {
+      alert("Có lỗi xảy ra. Vui lòng thử lại!");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -216,9 +233,10 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="flex items-center gap-2 px-8 py-3 bg-[#f6b846] text-black text-lg font-semibold rounded-lg hover:bg-[#f6b846]/90 transition-all duration-300 transform hover:scale-105"
+                disabled={isSubmitting}
+                className="flex items-center gap-2 px-8 py-3 bg-[#f6b846] text-black text-lg font-semibold rounded-lg cursor-pointer hover:bg-[#f6b846]/90 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Gửi
+                {isSubmitting ? "Đang gửi..." : "Gửi"}
                 <Send className="w-5 h-5" />
               </button>
             </form>
