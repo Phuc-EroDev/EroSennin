@@ -7,7 +7,7 @@ import eroHomestay from "~/assets/images/project/ero_homestay.png";
 import eroCommic from "~/assets/images/project/ero_commic.png";
 import eroMusic from "~/assets/images/project/ero_music.png";
 import ProjectDetailComponent from "../Components/ProjectDetailComponent/ProjectDetailComponent";
-import { useResponsive } from "~/Hooks/useResponsive";
+import { useResponsive } from "~/hooks/useResponsive";
 
 const ProjectPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
