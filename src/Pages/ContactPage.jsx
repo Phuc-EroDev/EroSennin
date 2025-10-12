@@ -119,31 +119,35 @@ const ContactPage = () => {
   return (
     <div>
       <ContentComponent label="Contact Me">
-        <div className="px-10 py-6 space-y-8">
-          <h3 className="text-2xl text-center mb-8 font-bold text-white mb-3">
+        <div className="px-4 md:px-6 lg:px-10 py-4 md:py-6 space-y-6 md:space-y-8">
+          <h3 className="text-lg md:text-xl lg:text-2xl text-center mb-6 md:mb-8 font-bold text-white">
             Hãy để lại thông tin, mình sẽ phản hồi bạn sớm nhất có thể!
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
             {contactInfo.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
                 target="_blank"
-                className="bg-[#2a2a2a] p-5 rounded-lg group hover:bg-[#353535] transition-colors duration-300"
+                className="bg-[#2a2a2a] p-4 md:p-5 rounded-lg group hover:bg-[#353535] transition-colors duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-[#f6b846]/10 rounded-lg">
-                    <item.icon className="w-6 h-6 text-[#f6b846]" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="p-2 md:p-3 bg-[#f6b846]/10 rounded-lg">
+                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-[#f6b846]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-gray-400 text-sm mb-1">{item.label}</h3>
+                    <h3 className="text-gray-400 text-xs md:text-sm mb-1">
+                      {item.label}
+                    </h3>
                     {item.link ? (
-                      <span className="text-white group-hover:text-[#f6b846] duration-300">
+                      <span className="text-sm md:text-base text-white group-hover:text-[#f6b846] duration-300 break-words">
                         {item.value}
                       </span>
                     ) : (
-                      <p className="text-white">{item.value}</p>
+                      <p className="text-sm md:text-base text-white break-words">
+                        {item.value}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -151,28 +155,28 @@ const ContactPage = () => {
             ))}
           </div>
 
-          <div className="flex justify-center gap-6 bg-[#2a2a2a] p-6 rounded-lg mb-8">
+          <div className="flex justify-center gap-3 md:gap-4 lg:gap-6 bg-[#2a2a2a] p-4 md:p-6 rounded-lg mb-6 md:mb-8 flex-wrap">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.link}
                 target="_blank"
-                className={`p-4 bg-[#353535] rounded-full text-white hover:text-[#f6b846] hover:bg-[#f6b846]/10 duration-300`}
+                className={`p-3 md:p-4 bg-[#353535] rounded-full text-white hover:text-[#f6b846] hover:bg-[#f6b846]/10 duration-300`}
                 title={social.label}
               >
-                <social.icon className="w-6 h-6" />
+                <social.icon className="w-5 h-5 md:w-6 md:h-6" />
               </a>
             ))}
           </div>
 
-          <div className="bg-[#2a2a2a] p-8 rounded-lg">
-            <h3 className="text-white font-semibold text-xl mb-6">
+          <div className="bg-[#2a2a2a] p-4 md:p-6 lg:p-8 rounded-lg">
+            <h3 className="text-white font-semibold text-lg md:text-xl mb-4 md:mb-6">
               Gửi Tin Nhắn
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 <div>
-                  <label className="block text-gray-400 text-md mb-2">
+                  <label className="block text-gray-400 text-sm md:text-md mb-2">
                     Họ và Tên <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -181,12 +185,12 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#353535] text-white text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 bg-[#353535] text-white text-sm md:text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
                     placeholder="Nhập họ tên của bạn"
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-md mb-2">
+                  <label className="block text-gray-400 text-sm md:text-md mb-2">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -195,14 +199,14 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#353535] text-white text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
+                    className="w-full px-3 py-2 md:px-4 md:py-3 bg-[#353535] text-white text-sm md:text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
                     placeholder="email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-gray-400 text-md mb-2">
+                <label className="block text-gray-400 text-sm md:text-md mb-2">
                   Tiêu Đề <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -211,13 +215,13 @@ const ContactPage = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#353535] text-white text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
+                  className="w-full px-3 py-2 md:px-4 md:py-3 bg-[#353535] text-white text-sm md:text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300"
                   placeholder="Tiêu đề tin nhắn"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-400 text-md mb-2">
+                <label className="block text-gray-400 text-sm md:text-md mb-2">
                   Nội Dung <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -226,7 +230,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 bg-[#353535] text-white text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300 resize-none"
+                  className="w-full px-3 py-2 md:px-4 md:py-3 bg-[#353535] text-white text-sm md:text-md rounded-lg border border-transparent focus:border-[#f6b846] focus:outline-none transition-colors duration-300 resize-none"
                   placeholder="Nội dung tin nhắn của bạn..."
                 ></textarea>
               </div>
@@ -234,29 +238,29 @@ const ContactPage = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex items-center gap-2 px-8 py-3 bg-[#f6b846] text-black text-lg font-semibold rounded-lg cursor-pointer hover:bg-[#f6b846]/90 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 bg-[#f6b846] text-black text-base md:text-lg font-semibold rounded-lg cursor-pointer hover:bg-[#f6b846]/90 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {isSubmitting ? "Đang gửi..." : "Gửi"}
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </form>
           </div>
 
-          <div className="bg-[#2a2a2a] p-6 rounded-lg">
-            <h3 className="text-white font-semibold text-xl mb-4">
+          <div className="bg-[#2a2a2a] p-4 md:p-6 rounded-lg">
+            <h3 className="text-white font-semibold text-lg md:text-xl mb-3 md:mb-4">
               Vị Trí Của Mình
             </h3>
             <div className="rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.8985094267406!2d108.15069287503894!3d16.074209084611447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218d3e6f8b1e1%3A0x8d6b6c5c5c5c5c5c!2zMTQ0IE5ndXnhu4VuIEzGsMahbmcgQuG6sW5nLCBMacOqbiBDaGnhu4N1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1696000000000!5m2!1svi!2s"
                 width="100%"
-                height="400"
+                height="300"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Map Location"
-                className="rounded-lg"
+                className="rounded-lg md:h-[400px]"
               ></iframe>
             </div>
           </div>

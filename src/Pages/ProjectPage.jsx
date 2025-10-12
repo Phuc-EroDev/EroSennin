@@ -7,9 +7,11 @@ import eroHomestay from "~/assets/images/project/ero_homestay.png";
 import eroCommic from "~/assets/images/project/ero_commic.png";
 import eroMusic from "~/assets/images/project/ero_music.png";
 import ProjectDetailComponent from "../Components/ProjectDetailComponent/ProjectDetailComponent";
+import { useResponsive } from "~/Hooks/useResponsive";
 
 const ProjectPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const { isMobile } = useResponsive();
 
   const featuredProjects = [
     {
@@ -102,15 +104,17 @@ const ProjectPage = () => {
   return (
     <div>
       <ContentComponent label="Personal Projects">
-        <div className="px-10 grid grid-cols-2 gap-6">
+        <div className="px-4 md:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {featuredProjects.map((project, index) => {
             const isLeftColumn = index % 2 === 0;
             const isRightColumn = index % 2 === 1;
             const isLastProject = index === featuredProjects.length - 1;
-            const shouldShowDetailHere =
-              (selectedIndex === index && isRightColumn) ||
-              (selectedIndex === index && isLeftColumn && isLastProject) ||
-              (selectedIndex === index - 1 && isRightColumn);
+
+            const shouldShowDetailHere = isMobile
+              ? selectedIndex === index
+              : (selectedIndex === index && isRightColumn) ||
+                (selectedIndex === index && isLeftColumn && isLastProject) ||
+                (selectedIndex === index - 1 && isRightColumn);
 
             return (
               <React.Fragment key={index}>

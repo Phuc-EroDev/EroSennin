@@ -22,11 +22,11 @@ const AboutPage = () => {
   return (
     <div>
       <ContentComponent label="About Me">
-        <div className="px-10">
-          <h3 className="text-[17px] font-semibold mb-4">
-            Xin chào! Mình là Phúc Võ — bí danh: EroSennin 🌀
+        <div className="px-4 md:px-6 lg:px-10">
+          <h3 className="text-[13px] md:text-[16px] lg:text-[17px] font-semibold mb-3 md:mb-4">
+            Xin chào! Mình là Phúc Võ — bí danh: EroSennin ✨
           </h3>
-          <div className="flex flex-col gap-3 text-[15px] text-gray-400 leading-relaxed font-mono text-justify">
+          <div className="flex flex-col gap-2 md:gap-3 text-[12px] md:text-[14px] lg:text-[15px] text-gray-400 leading-relaxed font-mono text-justify">
             <p>
               Hiện tại, mình là một FullStack Web Developer, thuộc thế hệ coder
               trẻ nhưng trái tim lại mang tinh thần lãng tử như thầy Jiraiya —
@@ -53,19 +53,19 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 text-[15px] font-mono">
+          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-[13px] md:text-[14px] lg:text-[15px] font-mono">
             {info.map((item) => (
               <div key={item.label} className="flex items-center gap-2">
-                <span className="text-gray-400 uppercase tracking-wider">
+                <span className="text-gray-400 uppercase tracking-wider text-[11px] md:text-[13px]">
                   {item.label}
                 </span>
-                <span className="text-gray-500">. . . .</span>
+                <span className="text-gray-500 hidden md:inline">. . . .</span>
                 <span className="text-white">{item.value}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 grid grid-cols-4 gap-4">
+          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {skills.map((skill, index) => (
               <div
                 key={index}
@@ -76,8 +76,8 @@ const AboutPage = () => {
                   alt={skill.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                  <span className="text-white font-semibold text-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3 md:p-4">
+                  <span className="text-white font-semibold text-xs md:text-sm">
                     {skill.name === "Lập trình" && "💻 Lập trình"}
                     {skill.name === "Sửa máy tính" && "🔧 Sửa máy tính"}
                     {skill.name === "Thổi sáo" && "🎶 Thổi sáo"}

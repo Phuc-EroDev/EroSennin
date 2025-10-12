@@ -32,36 +32,36 @@ const FavoritePage = () => {
   return (
     <div>
       <ContentComponent label="Favorite Quotes">
-        <div className="px-10 py-6">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-3">
+        <div className="px-4 md:px-6 lg:px-10 py-4 md:py-6">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
               Jiraiya's Quotes
             </h2>
-            <p className="text-gray-400 italic">
+            <p className="text-sm md:text-base text-gray-400 italic">
               Những câu nói truyền cảm hứng từ Jiraiya - The Gallant
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-4 md:gap-6">
             {quotes.map((quote, index) => (
               <div
                 key={index}
-                className="bg-[#2a2a2a] p-6 rounded-xl hover:bg-[#353535] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#f6b846]/10"
+                className="bg-[#2a2a2a] p-4 md:p-6 rounded-xl hover:bg-[#353535] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#f6b846]/10"
               >
-                <div className="flex gap-4">
+                <div className="flex gap-3 md:gap-4">
                   <div className="flex-shrink-0">
-                    <div className="p-3 bg-[#f6b846]/10 rounded-lg">
-                      <Quote className="w-6 h-6 text-[#f6b846]" />
+                    <div className="p-2 md:p-3 bg-[#f6b846]/10 rounded-lg">
+                      <Quote className="w-5 h-5 md:w-6 md:h-6 text-[#f6b846]" />
                     </div>
                   </div>
 
                   <div className="flex-1">
-                    <p className="text-white text-lg leading-relaxed mb-3 italic">
+                    <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed mb-2 md:mb-3 italic">
                       "{quote.text}"
                     </p>
                     <div className="flex items-center gap-2">
-                      <div className="h-[2px] w-12 bg-[#f6b846]"></div>
-                      <p className="text-[#f6b846] text-sm font-semibold">
+                      <div className="h-[2px] w-8 md:w-12 bg-[#f6b846]"></div>
+                      <p className="text-[#f6b846] text-xs md:text-sm font-semibold">
                         {quote.context}
                       </p>
                     </div>
@@ -71,12 +71,12 @@ const FavoritePage = () => {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <div className="inline-block bg-gradient-to-r from-[#f6b846]/20 to-transparent p-6 rounded-xl">
-              <p className="text-gray-300 text-xl italic mb-2">
+          <div className="mt-8 md:mt-12 text-center">
+            <div className="inline-block bg-gradient-to-r from-[#f6b846]/20 to-transparent p-4 md:p-6 rounded-xl">
+              <p className="text-gray-300 text-base md:text-lg lg:text-xl italic mb-2">
                 "The Tale of Jiraiya the Gallant"
               </p>
-              <p className="text-gray-500 text-sm">— Ero-Sennin</p>
+              <p className="text-gray-500 text-xs md:text-sm">— Ero-Sennin</p>
             </div>
           </div>
         </div>
